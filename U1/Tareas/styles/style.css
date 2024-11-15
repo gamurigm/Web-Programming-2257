@@ -49,9 +49,6 @@ body {
     border-radius: 8px;
 }
 
-.elemento-nav:hover {
-    background: #fafafa;
-}
 
 .barra-historias {
     display: flex;
@@ -76,3 +73,21 @@ body {
     background: #8e8e8e;
 }
 
+p > h6 {
+    color: blueviolet;
+}
+
+.flexstyle{
+    display: flex;  
+    max-width: 400px;
+    border: brown;
+    border-width: 5px;
+    background-color: aliceblue;
+    border-style: dashed;
+    justify-content: space-betweens;
+}
+
+.form1 {
+    display: flex;
+    justify-content: center;
+}
