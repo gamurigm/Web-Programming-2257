@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
 
-    <title>Mi Primera Pagina web</title>
+    <title>Mi Primera Página web</title>
 </head>
 <body>
     <div class="container">
@@ -13,9 +13,23 @@
             <center><h1>Blog de música</h1></center>
         </header>
         
+        <nav>
+            Home| <a href="./U1/Clase 4/index.html" target="_blank">Info</a> | <a href="./U1/Clase 3/index.html" target="_blank">mas info</a>
+        </nav>
+
+        Buscar: <input type="text" id="buscar" name="buscar"> <button id="btn-buscar">Buscar</button>
+
         <section>
             <h2>Clases Piano</h2>
-            <p class="piano-text">Descubre el arte de tocar el <strong>piano</strong> en nuestro curso completo para principiantes e intermedios, donde aprenderás desde las bases, como la lectura de partituras y la postura correcta, hasta técnicas avanzadas de digitación y expresión musical. Con un enfoque práctico y ameno, el curso abarca teoría musical esencial, ejercicios de escalas y acordes, y una selección de piezas clásicas y contemporáneas para desarrollar tus habilidades. Guiado por un instructor experto, este curso te permitirá avanzar a tu propio ritmo mientras ganas confianza y fluidez en cada lección.</p>
+            <p class="piano-text">Descubre el arte de tocar el <strong>piano</strong> 
+                en nuestro curso completo para principiantes e intermedios, 
+                donde aprenderás desde las bases, como la lectura de partituras y la 
+                <span class="class-span">postura correcta</span>, hasta técnicas avanzadas de digitación y 
+                expresión musical. Con un enfoque práctico y ameno, 
+                el curso abarca teoría musical esencial, ejercicios de escalas y acordes, 
+                y una selección de <em>piezas clásicas y contemporáneas</em> para desarrollar tus habilidades. 
+                Guiado por un instructor experto, este curso te permitirá avanzar a tu propio ritmo 
+                mientras ganas confianza y fluidez en cada lección.</p>
             
             <dl>
                 <dt id="lecciones">Videos de interés</dt>
@@ -29,8 +43,17 @@
                 <dd><a href="https://musicaparadisfrutar.com/partituras-piano/" target="_blank">Web 3</a></dd>
             </dl>  
 
-        <center><a href="https://www.elpianodelaura.com/" target="_blank"><img src="./img/images.jpg" alt="piano" width="400" height="300"></a></center>
-        </section>
+        <center>
+            <a href="https://www.elpianodelaura.com/" target="_blank">
+                <figure>
+                    <img src="./img/images.jpg" alt="piano" width="400" height="300">
+                    <figcaption>Clases de Piano con Laura</figcaption>
+                </figure>
+            </a>
+        </center>
+        <button class="btn1">Visitar Página</button>
+        
+    </section>
 
         <section>
             <h2>Clases de Guitarra</h2>
@@ -42,7 +65,16 @@
                 <li><a href="https://www.youtube.com/watch?v=kAALQ4JEY6c&list=PL92TYERZtnkSqZpcT8xlygi_FfpnecThS&index=4" target="_blank">Lección 4</a></li>
                 <li><a href="https://www.youtube.com/watch?v=kAALQ4JEY6c&list=PL92TYERZtnkSqZpcT8xlygi_FfpnecThS&index=5" target="_blank">Lección 5</a></li>      
             </ol>
-            <center><a href="https://carlosvicentblog.wordpress.com/" target="_blank"><img src="./img/guitarclases.jpg" alt="guitarra" width="400" height="300"><a/></center>
+            <center>
+                <a href="https://carlosvicentblog.wordpress.com/" target="_blank">
+                    <figure>
+                        <img src="./img/guitarclases.jpg" alt="guitarra" width="400" height="300">
+                        <figcaption>Clases de Guitarra</figcaption>
+                    </figure>
+                <a/>
+            </center>
+            <button class="btn1">Visitar Página</button>
+
         </section>
 
         <footer>
