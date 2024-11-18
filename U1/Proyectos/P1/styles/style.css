@@ -49,7 +49,6 @@ body {
     border-radius: 8px;
 }
 
-
 .barra-historias {
     display: flex;
     padding: 10px;
@@ -73,21 +72,24 @@ body {
     background: #8e8e8e;
 }
 
-p > h6 {
-    color: blueviolet;
+.contenido-publicacion {
+    width: 470px; 
+    max-width: 100%;
+    background-color: #fff;
 }
 
-.flexstyle{
-    display: flex;  
-    max-width: 400px;
-    border: brown;
-    border-width: 5px;
-    background-color: aliceblue;
-    border-style: dashed;
-    justify-content: space-betweens;
+.imagen-publicacion {
+    width: 470px; 
+    height: 470px;
+    object-fit: cover; /* Mantiene la proporción de la imagen sin distorsionar */
+    display: block; 
 }
 
-.form1 {
-    display: flex;
-    justify-content: center;
+.publicacion {
+    max-width: 470px;
+    background: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    margin-bottom: 24px;
 }
+
