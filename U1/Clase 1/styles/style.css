@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(22, 150, 30);
+    background-color: rgb(100, 220, 150);
     color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: larger;
@@ -7,7 +7,7 @@ body {
 }
 
 p {
-    color: aqua;
+    color: blue;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
 }
@@ -79,4 +79,22 @@ footer{
     border-radius: 5px;
     cursor: pointer;
     background-color: midnightblue;
+}
+
+.table-style{
+    border-style: solid;
+    border-color: black;
+}
+
+tr{
+    background-color: aquamarine;
+}
+
+th{
+    background-color: aliceblue;
+    border: 2px solid;
+}
+
+td{
+    background-color: aqua;
 }

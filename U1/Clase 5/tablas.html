@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/stylebg.css">
+    <title>Tablas</title>
+</head>
+<body>
+    <header>Tablas</header>
+    <section>
+        <p>Uso de la etiqueta <em>table</em> para el manejo de envio o recibo de <i>información</i></p>
+        <article>
+            <table frame="hsize" rules="rows" class="table-style" cellpadding="10px" cellspacing="2px">
+                
+                <thead>
+                    <caption align="bottom"><em>Listado de Personas: Nombres y Edades</em></caption> 
+                    
+                    <tr>
+                        <th align="center" >Nombres</th>
+                        <th align="center">Apellidos</th>
+                        <th align="center">Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Andres</td>
+                        <td>Alvares</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>Diego</td>
+                        <td>Gamboa</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>Gabriel</td>
+                        <td>Murillo</td>
+                        <td>25</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                        <td colspan="3">Fig. 1: Información sobre personas</td>
+                </tfoot>
+            </table>
+        </article>
+        
+        
+    </section>
+    <br><br><br><br><br>
+
+
+    <section>
+        <form>
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" placeholder="Nombres" required><br><br>
+    
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" placeholder="Apellidos" name="apellidos" required><br><br>
+    
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" placeholder="Password" name="password" required><br><br>
+    
+            <label for="rol">Rol:</label>
+            <select id="rol" name="rol">
+                <option value="estudiante">Estudiante</option>
+                <option value="docente">Docente</option>
+                <option value="administrativo">Administrativo</option>
+            </select><br><br>
+    
+            <input type="submit" value="Registrar">
+        </form>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+
+body{
+    background: rgb(2,0,36);
+background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,109,138,1) 0%, rgba(218,250,243,1) 59%, rgba(9,83,121,1) 100%, rgba(9,88,127,1) 100%);
+background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,109,138,1) 0%, rgba(218,250,243,1) 59%, rgba(9,83,121,1) 100%, rgba(9,88,127,1) 100%);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(8,109,138,1) 0%, rgba(218,250,243,1) 59%, rgba(9,83,121,1) 100%, rgba(9,88,127,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#09587f",GradientType=1);
+}
+
+
+.table-style{
+    border-style: solid;
+    border-color: black;
+}
+
+tr{
+    background-color: aquamarine;
+}
+
+th{
+    background-color: aliceblue;
+    border: 2px solid;
+}
+
+td{
+    background-color: aqua;
+}
+
+input[type="text"]{
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    border-radius: 0px;
+    color: aqua;
+}
+
+input[type="submit"]{
+    background: whitesmoke;
+    width: 30%;
+    color: black;   
+}
+
+/*input::placeholder {
+    color: gainsboro;
+    font-style: italic;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}*/
+
+input[type="text"]::placeholder{
+    color: red;
+}
+
+input{
+    border-radius: 10px;
+    border: 0px;
+    outline: none; /*desaparecen los bordes*/
+}
