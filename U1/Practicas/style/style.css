@@ -1,0 +1,55 @@
+*{
+    font-family: 'Neue Haas Grotesk', 'Helvetica', 'Arial', sans-serif;
+    text-decoration: none;
+}
+
+nav{
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    
+}
+
+nav a{
+    color: white;
+    font-size: 12px; 
+
+}
+
+.logo-bar{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-bar-left{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo h1{
+    color: white;
+    font-size: 25px;
+    font-family: Neue Haas Grotesk, 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.thicker-bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.security-pill{
+    display: flex;
+    justify-content: center;
+}
+ 
+.security-price{
+    display: flex;
+    margin-right: 8px;
+}
+
+div > span{
+    margin-right: 80px;
+}
