@@ -3,17 +3,26 @@
     text-decoration: none;
 }
 
+.contenedor {
+    display: flex;
+    flex: 1;
+    width: 100%;
+}
+
 nav{
     display: flex;
     background-color: black;
     justify-content: center;
-    
 }
 
 nav a{
     color: white;
     font-size: 12px; 
+}
 
+header{
+    text-align: center;
+    padding: 10px;
 }
 
 .logo-bar{
@@ -26,7 +35,13 @@ nav a{
 .logo-bar-left{
     align-items: center;
     display: flex;
+    margin-left: 25px;
     justify-content: space-between;
+}
+
+.logo-bar-right{
+    margin-top: 20px;
+    margin-right: 45px;
 }
 
 .logo h1{
@@ -50,6 +65,94 @@ nav a{
     margin-right: 8px;
 }
 
+.content1{
+    border-bottom-width: 32px;
+    border: 1px solid gray;
+    padding: 24px 18px;
+}
+
 div > span{
     margin-right: 80px;
 }
+
+.media-image{
+    margin-right: 2px;
+}
+
+.primary-story{
+    display: flex;
+    margin-top: 15px;
+}
+
+*/*.story-block{
+    border: 0 solid #e5e7eb;
+    box-sizing: border-box;
+}*/
+
+.story-block {
+    border: 1px solid #e5e7eb; /* Añade un borde visible */
+    box-sizing: border-box; /* Asegura que padding y borde no alteren el tamaño total */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0px; /* Separación entre bloques */
+    background-color: #f9f9f9; 
+    border-radius: 5px; 
+    transition: box-shadow 0.3s ease; /* Efecto suave al pasar el ratón */
+}
+
+.story-block:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra al hover */
+}
+
+
+.primary-story .headline-primary > span {
+    margin-top: 16px;
+    display: block; /* Asegura que el margen vertical funcione correctamente */
+}
+
+.primary-story .media-image img {
+    max-width: 100%;
+    height: auto; /* Mantiene las proporciones */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.barra{
+    width: 40%; 
+    padding: 20px;
+    background-color: #f4f4f4;
+    overflow: auto;
+    margin-left: 10px;
+}
+
+
+
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+}
+
+footer-info{
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+}
+
+
+
+
