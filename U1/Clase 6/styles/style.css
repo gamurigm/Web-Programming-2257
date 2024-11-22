@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+}
+
+body{
+    background-color: #ccc;
+}
+
+header{
+    background-color: violet;
+}
+
+.section1{
+    height: 450px;
+    background-color: black;
+    background-image: url(../img/angular.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.section2 h1 {
+    height: 400px;
+    background-image: url(../img/bg.jpg);
+    color: aliceblue;
+}
+
+.section3 {
+    height: 500px;
+    background-image: url(../img/fangular.jpg);
+    background-size: 100%;
+    background-attachment: fixed; /*elemento fijo, se mueve el contenido*/
+}
+
+.section4 {
+    height: 1000px;
+}
