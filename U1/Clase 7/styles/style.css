@@ -1,0 +1,12 @@
+#noticias {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid crimson;
+
+    column-count: 4;
+    column-gap: 20px;
+    /*column-rule-style:groove;
+    column-rule-color: firebrick;
+    column-rule-width: 10px; */
+    column-rule:  2px dotted purple;
+}

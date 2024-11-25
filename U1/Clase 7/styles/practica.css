@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url(../img/bg.jpg);
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav{
+    background-color: black;
+    height: 30px;
+    width: 100%;
+}
+
+main-nav {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.main-nav a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    background-color: #555;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+.article-container {
+    flex: 3;
+    margin-right: 20px;
+}
+
+.article {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.date-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    transform: translate(-3%, -30%);
+}
+
+
+.date-box {
+    height: 60px;
+    background-color: rgba(10, 120, 255, 0.97);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.day {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.day-name {
+    font-size: 1em;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.images img {
+    width: 30%;
+    border-radius: 5px;
+}
+
+.sidebar {
+    height: 100px;
+    flex: 1 1 100px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}

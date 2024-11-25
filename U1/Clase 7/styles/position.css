@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+}
+
+body{
+    height: 100%;
+}
+
+span{
+    width: 30px;
+    height: 30px;
+    border: 1px solid brown;
+    display: inline-block;
+}
+
+.section1{
+    border: 1px solid red;
+    height: 2000px;
+    position: relative; /*relativo al padre: body en este caso*/
+    top: 100px;
+}
+
+.article1{
+    border: 1px solid blue;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left:  50%;
+    top: 50%;  /*propiedades de position*/
+}
+
+.article2{
+    border: 1px solid goldenrod;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom: 0; /*parte baja del section1*/
+}
+
+.article3{
+    border: 1px solid turquoise;
+    height: 100px;
+    width: 100px;
+}
+
+
+.article4{
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.container{
+    transform-style: preserve-3d;
+    transform: rotateX(20deg) rotateY(50deg) rotateZ(10deg);
+    border: 5px solid hotpink;
+}

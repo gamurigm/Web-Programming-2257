@@ -31,6 +31,13 @@
     transition: opacity 0.5s ease;
 }
 
+.product-info:hover {
+    filter: invert(1); 
+    background-color: black;
+    color: white;
+}
+
+
 .product-header{
     display: flex;
     flex-direction: row;
@@ -65,14 +72,21 @@
     margin: 5px 0;
 }
 
-.product-card  .product-image img {
+.product-card:hover  .product-image img {
     transform: scaleX(-1);
 }
 
-.product-title:hover {
-    color: white; 
+
+.product-card-container {
+    background-color: white;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.product-info:hover {
     background-color: black;
-    transform: scale(1.1); 
+    color: white;
 }
 
 .colors{
