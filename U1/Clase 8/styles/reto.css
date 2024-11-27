@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #000;
+  }
+
+  .container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background: #222;
+    border: 4px solid #fff;
+  }
+
+  /* Pelota */
+   .pelota {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #f00;
+    border-radius: 50%;
+    transform: translateX(0);
+    animation: ballMoves 3s infinite;
+  }
+
+  
+  .barra {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100px;
+    height: 20px;
+    background: #00f;
+    border-radius: 10px;
+   
+    animation: movimientoBarra 3s infinite;
+  }
+
+  /* Animación de la pelota */
+  @keyframes ballMoves {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(200px, 250px);
+        }
+        100% {
+            transform: translate(380px );
+        }
+  }
+
+  @keyframes movimientoBarra {
+    0% {
+      transform: translateX();     }
+    50% {
+      transform: translateX(150px); 
+    }
+    100% {
+      transform: translateX(300px); 
+    }
+  }

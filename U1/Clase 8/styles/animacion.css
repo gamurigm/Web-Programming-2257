@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+}
+
+body{
+    height: 100%;
+    background-color: honeydew;
+}
+
+/*Keyframes para animar las propiedades, permiten crear secuencia de fotogramas, (@keyframes)*/
+
+ @keyframes cambiarColores {
+    0% {
+        background-color: coral;
+    }
+    25% {
+        background-color: aliceblue;
+        transform: scale(0.5);    
+    }
+    
+    50% {
+        background-color: lightblue;
+        transform: scale(1.1);
+    }
+    75% {
+        background-color: lightgreen;
+        transform: scale(0.5);
+    }    
+    100% {
+        background-color: red;
+    }
+
+   
+ }
+
+ .circulo {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation-name: cambiarColores;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    
+   /* 
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); simula rebote
+    animation-timing-function: ease-in-out;
+    animation-timing-function: step-start;
+    animation-timing-function: steps(5, end);*/
+}
+
+@keyframes volar{
+    0% {}
+    20%{ 
+        transform: translate(200px, 0px);
+
+    }
+    30%{
+        transform: translate(200px, 0px) rotate(90deg);
+    }
+    40%{
+        transform: translate(200px, 200px) rotate(90deg);
+    }
+    50%{
+        transform: translate(200px, 200px) rotate(180deg);
+    }
+    100%{}
+}
+
+.avion{
+    animation-name: cambiarColores;
+    animation-iteration-count: infinite;
+
+}
