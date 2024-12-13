@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Reglas @media</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f5;
+            color: #444;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table {
+            width: 90%;
+            max-width: 500px;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        th, td {
+            padding: 15px 20px;
+            text-align: center;
+        }
+        th {
+            background-color: green;
+            color: #fff;
+            font-weight: 600;
+        }
+        tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:last-child {
+            border-bottom: none;
+        }
+        tr:hover {
+            background-color: #f1f5ff;
+        }
+        code {
+            background-color: #e8f5e9;
+            color: #388e3c;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+        strong {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        .highlight {
+            color: #1976d2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Regla</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code><strong class="highlight">@media</strong>(&lt;condici&oacute;n&gt;)</code></td>
+                <td>Si se cumple la condición, se aplican los estilos de su interior.</td>
+            </tr>
+            <tr>
+                <td><code><strong class="highlight">@media not</strong>(&lt;condici&oacute;n&gt;)</code></td>
+                <td>Si no se cumple la condición, se aplican los estilos de su interior.</td>
+            </tr>
+            <tr>
+                <td><code><strong class="highlight">@media only</strong>(&lt;condici&oacute;n&gt;)</code></td>
+                <td>Si se cumple la condición y es un navegador moderno, se aplican los estilos.</td>
+            </tr>
+            <tr>
+                <td><code><strong class="highlight">@media</strong>(&lt;condici&oacute;n&gt;) <strong>and</strong> (&lt;condici&oacute;n&gt;)</code></td>
+                <td>Se se cumplen ambas condiciones, se aplican los estilos.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
