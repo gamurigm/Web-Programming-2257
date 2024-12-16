@@ -6,4 +6,4 @@ nombre="juan";
 edad=20;
 altua=1.8;
 
-console.log("el nombre de la personaes:", + nombre);
+console.log("el nombre de la personaes:", + altura);
