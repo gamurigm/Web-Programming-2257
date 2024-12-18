@@ -75,6 +75,6 @@ for (const estudiante of resultados) {
     console.log("Calificación más baja: " + estudiante.minimo);
     console.log("---------------");
 }
-
+//7. Definir el peor y mejor promedio
 console.log("El estudiante con el peor promedio es " + peorEstudiante.nombre + " con un promedio de " + peorEstudiante.promedio.toFixed(2));
 console.log("El estudiante con el mejor promedio es " + mejorEstudiante.nombre + " con un promedio de " + mejorEstudiante.promedio.toFixed(2));
