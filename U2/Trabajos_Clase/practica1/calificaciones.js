@@ -11,13 +11,13 @@ let estudiantes = [
     new Estudiante("Juan", [15.8, 17, 12, 14, 16]),
     new Estudiante("María", [18, 15, 17, 19, 16]),
     new Estudiante("Pedro", [10, 8, 12, 7, 9]),
-    new Estudiante("Ana", [14, 13, 15, 12, 16]),
+    new Estudiante("Ana", [14, 13, 15, 12.5, 16]),
     new Estudiante("Carlos", [6, 7, 8, 5, 7]),
     new Estudiante("Laura", [19, 18, 17, 20, 18]),
-    new Estudiante("Diego", [11, 13, 9, 12, 10]),
+    new Estudiante("Diego", [11, 13, 9, 12, 10.80]),
     new Estudiante("Sofia", [16, 15, 14, 17, 15]),
     new Estudiante("Miguel", [8, 9, 7, 6, 8]),
-    new Estudiante("Lucía", [13, 14, 12, 15, 13])
+    new Estudiante("Lucía", [13, 14.2, 12, 15, 0 ])
 ];
 
 // 2. Función para calcular el promedio
