@@ -1,15 +1,23 @@
-// 1. Crear el array de estudiantes con sus calificaciones
+//1. Definir la clase Estudiante y arreglo de calificaciones
+class Estudiante {
+    constructor(nombre, calificaciones) {
+        this.nombre = nombre;
+        this.calificaciones = calificaciones;
+    }
+}
+
+
 let estudiantes = [
-    { nombre: "Juan", calificaciones: [15.8, 17, 12, 14, 16] },
-    { nombre: "María", calificaciones: [18, 15, 17, 19, 16] },
-    { nombre: "Pedro", calificaciones: [10, 8, 12, 7, 9] },
-    { nombre: "Ana", calificaciones: [14, 13, 15, 12, 16] },
-    { nombre: "Carlos", calificaciones: [6, 7, 8, 5, 7] },
-    { nombre: "Laura", calificaciones: [19, 18, 17, 20, 18] },
-    { nombre: "Diego", calificaciones: [11, 13, 9, 12, 10] },
-    { nombre: "Sofia", calificaciones: [16, 15, 14, 17, 15] },
-    { nombre: "Miguel", calificaciones: [8, 9, 7, 6, 8] },
-    { nombre: "Lucía", calificaciones: [13, 14, 12, 15, 13] }
+    new Estudiante("Juan", [15.8, 17, 12, 14, 16]),
+    new Estudiante("María", [18, 15, 17, 19, 16]),
+    new Estudiante("Pedro", [10, 8, 12, 7, 9]),
+    new Estudiante("Ana", [14, 13, 15, 12, 16]),
+    new Estudiante("Carlos", [6, 7, 8, 5, 7]),
+    new Estudiante("Laura", [19, 18, 17, 20, 18]),
+    new Estudiante("Diego", [11, 13, 9, 12, 10]),
+    new Estudiante("Sofia", [16, 15, 14, 17, 15]),
+    new Estudiante("Miguel", [8, 9, 7, 6, 8]),
+    new Estudiante("Lucía", [13, 14, 12, 15, 13])
 ];
 
 // 2. Función para calcular el promedio
