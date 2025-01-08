@@ -26,15 +26,23 @@ function venderProducto(nombre, cantidad) {
 
 // Descuentos
 function aplicarDescuento(porcentaje) {
+    
+    if (porcentaje > 90) {
+        console.log("Error: El descuento no puede ser mayor al 90%.");
+        return;
+    }
+    
     for (let producto in inventario) {
         let nuevoPrecio = inventario[producto].precio * (1 - porcentaje / 100);
         inventario[producto].precio = nuevoPrecio;
-     }
+    }
 }
 
 venderProducto("Producto A", 5);
-venderProducto("Producto B", 40); // Ejemplo de error por falta de stock
-aplicarDescuento(10); // Aplicar un descuento del 10%
+venderProducto("Producto B", 40); 
+venderProducto("Producto C", 21);
+venderProducto("Producto D", 1);
+aplicarDescuento(10);       //desc 10%
 
 // Mostrar el inventario final
 console.log(inventario);
