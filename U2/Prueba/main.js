@@ -7,7 +7,36 @@ class Producto {
         this.precio = precio;
         this.cantidad = cantidad;
         this.categoria = categoria;
+    } //propiedades privadas?
+
+    get getNombre(){
+        return this.nombre;
     }
+
+    get getPrecio(){
+        return this.precio;
+    }
+
+    get getCantidad(){
+        return this.cantidad;
+    }
+
+    set setCantidad(cantidad){
+        this. cantidad = cantidad;
+    }
+
+    set setPrecio(precio){
+        this. precio = precio;
+    }
+
+    set setCategoria(categoria){
+        this. categoria = categoria;
+    }
+
+    set setNombre(nombre){
+        this. nombre = nombre;
+    }
+
 }
 
 // Clase Inventario para manejar los productos
@@ -21,7 +50,7 @@ class Inventario {
         this.productos.push(producto)
     }
 
-    // Método para listar los productos ordenados alfabéticamente
+    // Método para listar los productos ordenados alfabéticamente (ascendente)
     listar(){
         let productosOrdenados = this.productos.sort((a, b) => {
             return a.nombre.localeCompare(b.nombre);
@@ -51,12 +80,12 @@ class Venta {
 
     // Método para realizar una venta
     realizarVenta(productoNombre, cantidad){
-        let producto = this.inventario.productos.find(p => p.nombre === productoNombre);
+        let producto = this.inventario.productos.find(p => p.getNombre === productoNombre);
         if(!producto){
             console.error("Error: El producto especificado no existe.");
             return;
         }
-        if(producto.cantidad < cantidad){
+        if(producto.getCantidad < cantidad){
             console.error("Error: La cantidad disponible del producto es insuficiente.");
             return;
         }
@@ -84,7 +113,7 @@ class Reporte{
     // Método para calcular el total de ingresos generados
     calcularTotal(){
         let total = this.ventas.reduce((acumulador, venta) => {
-            return acumulador + venta.cantidad * this.inventario.productos.find(p => p.nombre === venta.nombre).precio;
+            return acumulador + venta.cantidad * this.inventario.productos.find(p => p.getNombre === venta.nombre).precio;
         }, 0);
         return total;
     }
@@ -139,14 +168,34 @@ inventario.agregarProducto(producto10);
 // Creación de una instancia de Venta
 const venta = new Venta(inventario);
 
+// Se Aplica un descuento del 10% a todos los productos de Aseo Personal y ver los productos
+venta.aplicarDescuento('aseo personal', 10);
+console.log('descuento del 10% aplicado a los productos:',inventario.filtrarPorCategoria('aseo personal'));
+
 // Realización de ventas
 venta.realizarVenta('jabon', 20);
 venta.realizarVenta('shampoo', 15);
-venta.realizarVenta('aceite 1L', 50);
-
-//Se Aplica un descuento del 10% a todos los productos de Aseo Personal
-venta.aplicarDescuento('aseo personal', 10);
+venta.realizarVenta('aceite 1L', 90);
 
 // Creación de un reporte e Impresión del Reporte
 const reporte = new Reporte(inventario, venta.ventasRealizadas);
 reporte.imprimirReporteDetallado();
+
+
+
+
+//• Correcto diseño y uso de clases con encapsulación y herencia.
+//• Efectivo manejo de estructuras de datos avanzadas.
+//• Implementación de funciones y manipulación de arreglos con métodos avanzados.//
+//• Generación precisa de reportes con datos dinámicos.
+//• Documentación del código con comentarios claros y concisos.
+//rewuisitos tecnicos
+//o Aplicación de estructuras avanzadas de datos (objetos anidados, arreglos de objetos).
+// Uso de estructuras de control (if, switch, for, while).
+//Implementación de funciones complejas (funciones constructoras) y funciones
+//autoejecutables.
+// Uso de métodos get y set en Objetos.
+//Uso de Constructores(Object, Object.create, etc);
+// Manipulación y filtrado de datos con métodos avanzados de arreglos (map, filter, reduce,sort, etc).
+//Creación de clases con encapsulación, herencia y métodos privados.
+
