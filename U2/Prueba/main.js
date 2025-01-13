@@ -1,77 +1,102 @@
-// Implementación de los requisitos solicitados
-
-// Clase Producto para representar los productos en el inventario
+// Clase Producto 
 class Producto {
+    nombre;
+    #precio;
+    #cantidad;
+    #categoria;
+
     constructor(nombre, precio, cantidad, categoria) {
         this.nombre = nombre;
-        this.precio = precio;
-        this.cantidad = cantidad;
-        this.categoria = categoria;
+        this.#precio = precio;
+        this.#cantidad = cantidad;
+        this.#categoria = categoria;
     }
 
-    // Métodos get
-    get getNombre() {
-        return this.nombre;
-    }
-
-    get getPrecio() {
-        return this.precio;
-    }
-
-    get getCantidad() {
-        return this.cantidad;
-    }
-
-    // Métodos set con validaciones
-    set setCantidad(cantidad) {
+    // Métodos privados para validación
+    #validarCantidad(cantidad) {
         if (cantidad < 0) {
-            console.error("Error: La cantidad no puede ser negativa.");
-            return;
+            throw new Error("Error: La cantidad no puede ser negativa.");
         }
-        this.cantidad = cantidad;
+        return true;
     }
 
-    set setPrecio(precio) {
+    #validarPrecio(precio) {
         if (precio < 0) {
-            console.error("Error: El precio no puede ser negativo.");
-            return;
+            throw new Error("Error: El precio no puede ser negativo.");
         }
-        this.precio = precio;
+        return true;
     }
 
-    set setCategoria(categoria) {
-        this.categoria = categoria;
+    // Métodos get    
+    get precio() {
+        return this.#precio;
     }
 
-    set setNombre(nombre) {
-        this.nombre = nombre;
+    get cantidad() {
+        return this.#cantidad;
+    }
+
+    get categoria() {
+        return this.#categoria;
+    }
+
+    // Métodos set
+    set cantidad(cantidad) {
+        if (this.#validarCantidad(cantidad)) {
+            this.#cantidad = cantidad;
+        }
+    }
+
+    set precio(precio) {
+        if (this.#validarPrecio(precio)) {
+            this.#precio = precio;
+        }
+    }
+
+    set categoria(categoria) {
+        this.#categoria = categoria;
     }
 }
 
-// Clase Inventario para manejar los productos
+// Clase Inventario
 class Inventario {
+    #productos;
+
     constructor() {
-        this.productos = [];
+        this.#productos = [];
     }
+
 
     // Método para agregar un producto al inventario
     agregarProducto(producto) {
-        this.productos.push(producto);
+            this.#productos.push(producto);
     }
 
-    // Método para listar los productos ordenados alfabéticamente (ascendente)
+    // Getter para productos
+    get productos() {
+        return this.#productos;
+    }
+
+    // Método para listar los productos ordenados alfabéticamente
     listar() {
-        return this.productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        this.#productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+      
+        return this.#productos.map(producto => ({
+            nombre: producto.nombre,
+            precio: producto.precio,
+            cantidad: producto.cantidad,
+            categoria: producto.categoria
+        }));
     }
 
     // Método para filtrar los productos por categoría
     filtrarPorCategoria(categoria) {
-        return this.productos.filter(producto => producto.categoria === categoria);
+        return this.#productos.filter(producto => producto.categoria === categoria);
     }
 
     // Método para mostrar los productos del inventario
     mostrarProductos() {
-        this.productos.forEach(p => {
+        this.#productos.forEach(p => {
             console.log(`Nombre: ${p.nombre}, Precio: ${p.precio}, Cantidad: ${p.cantidad}`);
         });
     }
@@ -79,29 +104,49 @@ class Inventario {
 
 // Clase Venta para manejar las ventas
 class Venta {
+    #inventario;
+    #ventasRealizadas;
+
     constructor(inventario) {
-        this.inventario = inventario;
-        this.ventasRealizadas = [];
+        this.#inventario = inventario;
+        this.#ventasRealizadas = [];
+    }
+
+    // Método privado para validar venta
+    #validarVenta(productoNombre, cantidad) {
+        const producto = this.#inventario.productos.find(p => p.nombre === productoNombre);
+        if (!producto) {
+            throw new Error("Error: El producto especificado no existe.");
+        }
+        if (producto.cantidad < cantidad) {
+            throw new Error("Error: La cantidad disponible del producto es insuficiente.");
+        }
+        return producto;
+    }
+
+    // Getter para ventas realizadas
+    get ventasRealizadas() {
+        return this.#ventasRealizadas;
     }
 
     // Método para realizar una venta
     realizarVenta(productoNombre, cantidad) {
-        let producto = this.inventario.productos.find(p => p.nombre === productoNombre);
-        if (!producto) {
-            console.error("Error: El producto especificado no existe.");
-            return;
+        try {
+            const producto = this.#validarVenta(productoNombre, cantidad);
+            producto.cantidad -= cantidad;
+            this.#ventasRealizadas.push({ 
+                nombre: productoNombre, 
+                cantidad: cantidad, 
+                fecha: new Date() 
+            });
+        } catch (error) {
+            console.error(error.message);
         }
-        if (producto.cantidad < cantidad) {
-            console.error("Error: La cantidad disponible del producto es insuficiente.");
-            return;
-        }
-        producto.cantidad -= cantidad;
-        this.ventasRealizadas.push({ nombre: productoNombre, cantidad: cantidad, fecha: new Date() });
     }
 
-    // Método para aplicar un descuento a los productos de una categoría específica
+    // Método para aplicar un descuento
     aplicarDescuento(categoria, porcentaje) {
-        this.inventario.productos.forEach(producto => {
+        this.#inventario.productos.forEach(producto => {
             if (producto.categoria === categoria) {
                 producto.precio *= (1 - (porcentaje / 100));
             }
@@ -111,34 +156,40 @@ class Venta {
 
 // Clase Reporte para generar reportes de ventas
 class Reporte {
+    #inventario;
+    #ventas;
+
     constructor(inventario, ventas) {
-        this.inventario = inventario;
-        this.ventas = ventas;
+        this.#inventario = inventario;
+        this.#ventas = ventas;
     }
 
     // Método para calcular el total de ingresos generados
     calcularTotal() {
-        return this.ventas.reduce((acumulador, venta) => {
-            let producto = this.inventario.productos.find(p => p.nombre === venta.nombre);
+        const total = this.#ventas.reduce((acumulador, venta) => {
+            let producto = this.#inventario.productos.find(p => p.nombre === venta.nombre);
             return acumulador + (producto ? venta.cantidad * producto.precio : 0);
         }, 0);
+        return `$${total.toFixed(2)}`;
     }
 
     // Método para determinar el producto más vendido
     productoMasVendido() {
-        let ventasPorProducto = this.ventas.reduce((acumulador, venta) => {
+        let ventasPorProducto = this.#ventas.reduce((acumulador, venta) => {
             acumulador[venta.nombre] = (acumulador[venta.nombre] || 0) + venta.cantidad;
             return acumulador;
         }, {});
-        return Object.keys(ventasPorProducto).reduce((a, b) => ventasPorProducto[a] > ventasPorProducto[b] ? a : b);
+        return Object.keys(ventasPorProducto).reduce((a, b) => 
+            ventasPorProducto[a] > ventasPorProducto[b] ? a : b
+        );
     }
 
     // Método para imprimir el reporte detallado
     imprimirReporteDetallado() {
-        console.log("Inventario actualizado: ", this.inventario.listar());
-        console.log("Ventas realizadas: ", this.ventas);
-        console.log("Total de ingresos generados: ", this.calcularTotal());
-        console.log("Producto más vendido: ", this.productoMasVendido());
+        console.log("Inventario actualizado:", this.#inventario.listar());
+        console.log("Ventas realizadas:", this.#ventas);
+        console.log("Total de ingresos generados:", this.calcularTotal());
+        console.log("Producto más vendido:", this.productoMasVendido());
     }
 }
 
@@ -167,21 +218,22 @@ inventario.agregarProducto(producto8);
 inventario.agregarProducto(producto9);
 inventario.agregarProducto(producto10);
 
-// Creación de una instancia de Venta
+
 const venta = new Venta(inventario);
-
-// Se aplica un descuento del 10% a todos los productos de Aseo Personal y se ven los productos
+// Se aplica un descuento del 10% a todos los productos de Aseo Personal 
 venta.aplicarDescuento('aseo personal', 10);
-console.log('Descuento del 10% aplicado a los productos:', inventario.filtrarPorCategoria('aseo personal'));
+console.log('Descuento del 10% aplicado a los productos:', 
+    inventario.filtrarPorCategoria('aseo personal').map(producto => ({
+        nombre: producto.nombre,
+        precio: producto.precio,
+        cantidad: producto.cantidad,
+        categoria: producto.categoria
+    }))
+);
 
-// Realización de ventas
 venta.realizarVenta('jabon', 20);
 venta.realizarVenta('shampoo', 15);
-venta.realizarVenta('aceite 1L', 90);
+venta.realizarVenta('aceite 1L', 80);
 
-// Creación de un reporte e impresión del reporte
 const reporte = new Reporte(inventario, venta.ventasRealizadas);
 reporte.imprimirReporteDetallado();
-
-
-
