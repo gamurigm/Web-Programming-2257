@@ -218,8 +218,8 @@ inventario.agregarProducto(producto8);
 inventario.agregarProducto(producto9);
 inventario.agregarProducto(producto10);
 
-
 const venta = new Venta(inventario);
+
 // Se aplica un descuento del 10% a todos los productos de Aseo Personal 
 venta.aplicarDescuento('aseo personal', 10);
 console.log('Descuento del 10% aplicado a los productos:', 
