@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario y el DOM en Javascript</title>
+    <style>
+        .azul{
+            color: blue;
+        }
+        .rojo{
+            color: red;
+        }    
+        </style>
+</head>
+<body>
+    <form id="formulario" action="">
+        Nombre: <input type="text" id="nombre" value="Juan"><br>
+        Apellido: <input type="text" id="apellido" value="Perez"><br>
+        Correo: <input type="email" id="correo" value="juan.perez@example.com"><br>
+
+    </form>
+    <button onclick="mostrarValores()" type="submit">Mostrar</button>
+    <div id="valores"></div>
+    <script>
+        function mostrarValores() {
+            let formulario = document.forms['formulario'];
+            let texto = '';
+            for(const element of formulario){
+                texto += element.value + '<br>';
+            }
+            document.getElementById('valores').innerHTML = texto;
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Imagenes</title>
+</head>
+<body>
+    <h1 id="titulo">Cambio de imagenes</h1>
+    <img id="imagen" src="/DOM.png" alt="Imagen" />
+    <button type="button" onclick="mostrar()">Mostrar</button>
+    <script>
+        let currentImageIndex = 1; // Índice de la imagen actual
+        const totalImages = 5; // Total de imágenes
+
+        function mostrar() {
+            document.getElementById('imagen').src = `/img${currentImageIndex}.png`;
+            currentImageIndex = (currentImageIndex % totalImages) + 1; //siguient img
+        }
+
+        // Cambia la imagen cada 3 segundos
+        setInterval(mostrar, 3000);
+    </script>
+    
+</body>
+</html> 

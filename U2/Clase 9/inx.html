@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAnejo del DOM con JS</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo del DOM con JS</h1>
+    
+    <button type="button" onclick="mostrar()">Mostrar</button>
+    <script>
+        
+        function mostrar(){
+           const titulo = document.getElementById('titulo');
+            titulo.style.color = 'violet';
+            titulo.style.fontSize = '2em';
+        }
+    </script>
+    
+</body>
+</html> 
