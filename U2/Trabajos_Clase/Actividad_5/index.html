@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 5</title>
+</head>
+<body>
+
+    <h1 id="tituloPagina">Título de la Página</h1>
+    <button id="mostrarOcultarPanel">Mostrar/Ocultar Panel</button>
+
+    <div id="panelConfiguracion" style="display: none;">
+        <div class="grupo-formulario">
+            <label for="entradaTitulo">Cambiar título:</label>
+            <input type="text" id="entradaTitulo">
+        </div>
+        <div class="grupo-formulario">
+            <label for="colorFondo">Color de fondo:</label>
+            <input type="color" id="colorFondo">
+        </div>
+        <div class="grupo-formulario">
+            <label>
+                <input type="checkbox" id="habilitarComentarios">
+                Habilitar comentarios
+            </label>
+        </div>
+    </div>
+
+    <div id="seccionComentarios">
+        <textarea id="areaComentarios" disabled></textarea>
+    </div>
+
+    <ul id="listaElementos">
+        <li class="elemento-lista">Elemento 1</li>
+        <li class="elemento-lista">Elemento 2</li>
+        <li class="elemento-lista">Elemento 3</li>
+    </ul>
+
+    <script>
+        document.getElementById('mostrarOcultarPanel').addEventListener('click', () => {
+            const panel = document.getElementById('panelConfiguracion');
+            panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+        });
+
+        document.getElementById('entradaTitulo').addEventListener('input', (e) => {
+            document.getElementById('tituloPagina').textContent = e.target.value;
+        });
+
+        document.getElementById('colorFondo').addEventListener('input', (e) => {
+            document.body.style.backgroundColor = e.target.value;
+        });
+
+        document.getElementById('habilitarComentarios').addEventListener('change', (e) => {
+            document.getElementById('areaComentarios').disabled = !e.target.checked;
+        });
+
+        document.getElementById('listaElementos').addEventListener('click', (e) => {
+            if (e.target.classList.contains('elemento-lista')) {
+                e.target.remove();
+            }
+        });
+    </script>
+  
+</body>
+</html>
