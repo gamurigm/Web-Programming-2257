@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Repaso Examen</title>
+</head>
+<body>
+    <h1>Repaso!!!</h1>
+    <div id="contenedor">
+        <button id="agregar">Agregar Elemento</button>
+        
+        <ul id="lista">
+            <li class="elm">1.</li>
+            <li class="elm">2.</li>
+            <li class="elm">3.</li>
+            <li class="elm">4.</li>
+            <li class="elm">5.</li>
+            <li class="elm">6.</li>
+            <li class="elm">7.</li>
+            <li class="elm">8.</li>
+        </ul>
+      </div>
+      
+
+    <script>
+        //console.log(Object.keys(window)); //todos  los eventos
+
+        const lista = document.getElementById("lista");
+        const boton = document.getElementById("agregar");
+
+        boton.addEventListener("click", () => {
+        const nuevoElemento = document.createElement("li");
+        nuevoElemento.textContent = `Elemento ${lista.children.length + 1}`;
+        lista.appendChild(nuevoElemento);
+        });
+
+        lista.addEventListener("click", (e) => {
+            if (e.target.tagName === "LI") {
+                e.target.style.color = (e.target.style.color === "red") ? "blue" : "red";
+            }
+        });
+
+        document.getElementById("lista").addEventListener("click", (e)=>{
+            if(e.target.classList.contains("elm")){
+                    e.target.remove();
+            }  
+        });
+
+
+
+    </script>
+</body>
+</html>

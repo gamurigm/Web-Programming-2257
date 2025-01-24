@@ -1,0 +1,22 @@
+5. Manipulación del DOM
+
+5.1. Selección de elementos
+document.getElementById("id")
+document.querySelector(".clase")
+document.querySelectorAll(".clase")
+
+5.2. Crear y agregar elementos
+document.createElement("tag"): Crea un elemento.
+parent.appendChild(element): Agrega un hijo.
+parent.insertBefore(newNode, referenceNode): Inserta antes de un nodo de referencia.
+
+5.3. Eliminar elementos
+parent.removeChild(child): Elimina un hijo.
+element.remove(): Elimina un elemento directamente.
+
+
+5.4. Modificar contenido
+element.textContent: Cambia el texto interno.
+element.innerHTML: Cambia el HTML interno.
+element.setAttribute("attr", "value"): Cambia un atributo.
+element.style.property: Cambia estilos en línea.

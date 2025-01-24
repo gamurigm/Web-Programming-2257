@@ -1,0 +1,17 @@
+* {
+    background-color: rgba(184, 184, 220, 0.201);
+}
+
+.eliminar {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .eliminar:hover {
+    background-color: darkred;
+  }
+  
